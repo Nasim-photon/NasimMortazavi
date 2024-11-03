@@ -21,23 +21,38 @@ body {
     padding: 20px;
     position: fixed;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sidebar h2 {
-    font-size: 1.5em;
-    margin-bottom: 1em;
+    font-size: 1.8em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
 }
 
 .sidebar nav a {
-    display: block;
+    display: flex;
+    align-items: center;
     color: #ddd;
     text-decoration: none;
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 1.1em;
+    width: 100%;
+    transition: color 0.3s ease;
 }
 
 .sidebar nav a:hover {
     color: #fff;
+}
+
+.sidebar nav a i {
+    margin-right: 10px;
+    font-size: 1.1em;
 }
 
 /* Content Area */
@@ -45,6 +60,9 @@ body {
     margin-left: 270px;
     padding: 40px;
     max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section {
@@ -53,8 +71,10 @@ section {
 
 section h2 {
     font-size: 1.8em;
-    color: #333;
-    margin-bottom: 10px;
+    color: #444;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
 }
 
 section p, section ul {
@@ -75,8 +95,17 @@ ul li {
 a {
     color: #0366d6;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #0240b1;
+}
+
+/* Divider Effects for Sections */
+section:not(:last-of-type) {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
