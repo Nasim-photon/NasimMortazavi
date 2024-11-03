@@ -1,4 +1,11 @@
-/* Resetting some default browser styling */
+:root {
+    --primary-color: #1a73e8;
+    --text-color: #333;
+    --background-color: #fff;
+    --secondary-background: #f8f9fa;
+    --border-color: #e0e0e0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,128 +13,177 @@
 }
 
 body {
-    display: flex;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
-}
-
-/* Sidebar styling */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100vh;
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
-}
-
-.sidebar h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    color: #FFD700; /* Gold color */
-}
-
-.sidebar nav a {
-    display: block;
-    color: #ddd;
-    text-decoration: none;
-    margin: 10px 0;
-    font-size: 1.1em;
-    transition: color 0.3s;
-}
-
-.sidebar nav a:hover {
-    color: #FFD700;
-}
-
-.sidebar nav a i {
-    margin-right: 10px;
-}
-
-/* Content styling */
-.content {
-    margin-left: 250px;
-    padding: 40px;
-    width: calc(100% - 250px);
-}
-
-.section {
-    margin-bottom: 40px;
-    animation: fadeIn 0.6s ease-in-out;
-}
-
-.section h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #333;
-    border-bottom: 2px solid #FFD700;
-    padding-bottom: 5px;
-    display: inline-block;
-}
-
-/* Hover transition for links */
-.section p,
-.section ul {
-    font-size: 1.1em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    color: #555;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
-.section ul li {
-    margin: 10px 0;
+.academic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--background-color);
 }
 
-/* Contact link styling */
-a {
-    color: #333;
+.header-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
     text-decoration: none;
-    transition: color 0.3s;
+    color: var(--text-color);
+    padding: 0.5rem 0;
+    position: relative;
 }
 
-a:hover {
-    color: #FFD700;
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
 }
 
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-/* Keyframe animation for fadeIn */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.biography-section {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .sidebar {
-        width: 200px;
+.profile-container {
+    text-align: center;
+}
+
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.profile-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.profile-links a {
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.biography-content h1 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    background-color: var(--secondary-background);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.education-section {
+    margin-top: 2rem;
+}
+
+.education-item {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.education-details {
+    flex: 1;
+}
+
+.education-details .degree {
+    font-weight: 600;
+}
+
+.education-details .institution {
+    color: #666;
+}
+
+.publications-section {
+    margin-top: 3rem;
+}
+
+.publication-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.publication-item {
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.publication-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+.publication-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.publication-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .biography-section {
+        grid-template-columns: 1fr;
     }
 
-    .content {
-        margin-left: 200px;
-        padding: 20px;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
+    .profile-container {
+        margin-bottom: 2rem;
     }
 
-    .content {
-        margin-left: 0;
-        width: 100%;
+    .academic-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .main-nav {
+        gap: 1rem;
     }
 }
